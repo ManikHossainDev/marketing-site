@@ -1,0 +1,166 @@
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* COMMON BUTTON STYLE */
+.hero-btn {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+
+  border-radius: 6px;
+  text-decoration: none;
+
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+  transition: color 0.35s ease;
+
+  z-index: 1;
+}
+
+/* TOP TO BOTTOM ANIMATION LAYER */
+.hero-btn::before {
+  content: "";
+
+  position: absolute;
+  top: -100%;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transition: top 0.4s ease;
+
+  z-index: -1;
+}
+
+/* HOVER EFFECT */
+.hero-btn:hover::before {
+  top: 0;
+}
+
+/* =============================== */
+/* DARK BUTTON */
+/* =============================== */
+.dark-btn {
+  background: #0F172A;
+  color: white;
+  border: none;
+}
+
+/* RED HOVER EFFECT */
+.dark-btn::before {
+  background: #951A1D;
+}
+
+.dark-btn:hover {
+  color: white;
+}
+
+/* =============================== */
+/* LIGHT BUTTON */
+/* =============================== */
+.light-btn {
+  background: white;
+  color: #0F172A;
+  border: 2px solid #0F172A;
+}
+
+.light-btn::before {
+  background: #0F172A;
+}
+
+.light-btn:hover {
+  color: white;
+}
+
+/* ICON IMAGE */
+.hero-btn-icon {
+  background: white;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* PLAY ICON */
+.hero-play-icon {
+  background: #0D152F;
+  border-radius: 999px;
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+/* ICON HOVER EFFECTS */
+.hero-btn:hover .hero-btn-icon,
+.hero-btn:hover .hero-play-icon {
+  transform: scale(1.08);
+}
+
+/* LIGHT BUTTON PLAY ICON */
+.light-btn:hover .hero-play-icon {
+  background: white;
+  color: #0F172A;
+}
+
+/* ================================= */
+/* SMALL + MD DEVICE SAME STYLE */
+/* ================================= */
+@media (max-width: 1023px) {
+
+  .hero-buttons {
+    gap: 4px;
+  }
+
+  .hero-btn {
+    font-size: 5px;
+    padding: 3px 4px;
+    min-height: 20px;
+  }
+
+  .hero-btn-icon {
+    width: 8px;
+  }
+
+  .hero-play-icon {
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+  }
+}
+
+/* ================================= */
+/* LARGE DEVICE */
+/* ================================= */
+@media (min-width: 1024px) {
+
+  .hero-btn {
+    font-size: 12.48px;
+    padding: 4px 8px;
+    min-height: 33px;
+  }
+
+  .hero-btn-icon {
+    width: 20px;
+  }
+
+  .hero-play-icon {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+}
