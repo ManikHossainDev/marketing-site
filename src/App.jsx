@@ -15,7 +15,7 @@ import {
   PlayIcon,
 
 } from 'lucide-react';
-
+import { FaStar } from "react-icons/fa";
 import './button.css';
 import { MdOutlineStar } from "react-icons/md";
 import banner from './assets/herobanner.jpg';
@@ -39,6 +39,12 @@ import jounrneycontinuous from './assets/journey continues/journey continuous.pn
 
 import rightsideimage from './assets/journey continues/rightsideimage.png';
 import leftsideimage from './assets/journey continues/leftsideimage.png';
+
+import HeroSection from './assets/journey continues/HeroSection.png';
+import heroRightSide from './assets/journey continues/heroRightSide.png';
+
+import ourhero from './assets/journey continues/ourhero.png';
+import backgroundhero from './assets/journey continues/backgroundhero.png';
 
 import icon1 from './assets/our50/icon 1.png';
 import icon2 from './assets/our50/icon 2.png';
@@ -223,399 +229,329 @@ const categories = [
 
 export default function App() {
   return (
-    <main className="w-full overflow-hidden bg-[#F5ECE3]">
+    <main className="w-full overflow-hidden bg-[#f7f2eb]">
       {/* hero section */}
 
-      <section className="w-full overflow-hidden leading-tight min-h-[260px] sm:min-h-[420px] lg:min-h-[600px]">
-        <div className="relative w-full">
+      
+<section className="bg-[#f7f2eb] w-full overflow-hidden ">
+  <div className="relative w-full">
 
-          {/* BACKGROUND IMAGE */}
+    {/* Background Image */}
+    <img
+      src={HeroSection}
+      alt="Hero Background"
+      className="w-full h-auto object-cover block"
+    />
+
+    {/* Right Side Image */}
+    <div
+      className="
+        absolute inset-y-0 -top-20 md:-top-52 right-0 z-10
+        w-[32%] sm:w-[30%] lg:w-[30%]
+        flex items-center justify-end
+        pointer-events-none
+      "
+    >
+      <img
+        src={heroRightSide}
+        alt="Right Side"
+        className="w-full h-full object-contain object-center"
+      />
+    </div>
+
+    {/* Content Overlay */}
+    <div className="absolute inset-0 z-20 flex items-center">
+
+      {/* LEFT CONTENT */}
+      <div
+        className="
+          w-[80%] md:w-[40%] lg:w-[38%]
+
+          px-2 sm:px-5 md:px-8 lg:px-12 xl:px-16
+          py-2 sm:py-5 md:py-7 lg:py-10
+
+          flex flex-col
+          items-start
+
+          gap-[4px]
+          sm:gap-2
+          md:gap-3
+          lg:gap-4
+        "
+      >
+
+        {/* LOGO */}
+        <div className="flex flex-col items-start leading-none">
+
+          <span
+            className="
+              italic font-semibold
+              text-[#0F172A]
+              font-story
+              text-[6px]
+              sm:text-[10px]
+              md:text-[14px]
+              lg:text-[20px]
+              xl:text-[24px]
+            "
+          >
+            Join
+          </span>
+
+         
           <img
-            src={banner}
-            alt="Children around a USA map at Founders Park"
-            className="w-full h-auto object-cover select-none"
-          />
+        src={ourhero}
+        alt="Right Side"
+        className="w-full h-[30px] md:h-[80px]  lg:h-[100px] object-contain object-center"
+      />
+            
+        </div>
 
-          {/* CONTENT */}
-          <div className="absolute bottom-5 xs:bottom-6 sm:bottom-8 lg:bottom-10 inset-0 z-20 flex flex-row items-end w-full">
-
-            {/* LEFT SIDE */}
-            <div
-              className="
-          w-[42%] sm:w-[50%] md:w-[50%] lg:w-[31%]
-
-          px-2 sm:px-5 md:px-5 lg:px-7
-          pb-2 sm:pb-6 md:pb-6 lg:pb-8
-        "
-            >
-
-              {/* button */}
-              {/* <div
-                className="
-    flex flex-row sm:flex-row md:flex-row
-    gap-1 sm:gap-2 md:gap-2 sm:mt-5 sm:pt-5
-    w-fit max-w-full
-  "
-              >
-
-                <button
-                  className="
-      flex items-center justify-center gap-1
-
-      bg-[#0F172A]
-      font-opensans
-      text-white
-      font-semibold
-      uppercase
-      tracking-wider
-
-      text-[5px]
-      sm:text-[8px]
-      md:text-[8px]
-      lg:text-[14.48px]
-
-      py-[3px]
-      sm:py-1
-      md:py-1
-      lg:py-2
-
-      px-[4px]
-      sm:px-3
-      md:px-3
-      lg:px-4
-
-      rounded
-      shadow-lg
-      hover:bg-black
-      transition-all duration-300
-
-      min-h-[20px]
-      sm:min-h-[34px]
-      md:min-h-[34px]
-      lg:min-h-[44px]
-
-      whitespace-nowrap
-    "
-                >
-                  <img
-                    src={email}
-                    alt="Email"
-                    className="
-        w-[8px]
-        sm:w-[12px]
-        md:w-[12px]
-        lg:w-[20px]
-
-        mx-[2px]
-        sm:mx-2
-        md:mx-2
-
-        bg-white
-        h-auto
-      "
-                  />
-
-                  <span className="leading-none">
-                    Join the Early list
-                  </span>
-                </button>
-
-                <a
-                  href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
-                  className="
-      flex items-center justify-center gap-1
-
-      bg-white
-      text-[#0F172A]
-      font-opensans
-      border border-[#0F172A] sm:border-2 md:border-2
-      font-bold
-      uppercase
-      tracking-wider
-
-      text-[5px]
-      sm:text-[8px]
-      md:text-[8px]
-      lg:text-[14.48px]
-
-      py-[3px]
-      sm:py-1
-      md:py-1
-      lg:py-2
-
-      px-[4px]
-      sm:px-3
-      md:px-3
-      lg:px-4
-
-      rounded
-      shadow-lg
-      hover:bg-slate-100
-      transition-all duration-300
-
-      min-h-[20px]
-      sm:min-h-[34px]
-      md:min-h-[34px]
-      lg:min-h-[44px]
-
-      whitespace-nowrap
-    "
-                >
-                  <PlayIcon
-                    size={6}
-                    className="
-        w-[10px] h-[10px]
-        sm:w-[16px] sm:h-[16px]
-        md:w-[16px] md:h-[16px]
-        lg:w-[28px] lg:h-[28px]
-
-        bg-[#0D152F]
-        rounded-full
-        p-[2px]
-        sm:p-1
-        md:p-1
-
-        text-white
-      "
-                    fill="white"
-                  />
-
-                  <span className="leading-none">
-                    Watch the Story
-                  </span>
-                </a>
-
-              </div>  */}
-
-              {/* CONTENT */}
-              <div
-                className="
-    absolute
-    inset-0
-    z-20
-
-    flex
-    items-end
-
-    w-full
-    h-full
-
-    overflow-hidden
-  "
-              >
-
-                {/* LEFT SIDE */}
-                <div
-                  className="
-      w-[42%]
-      sm:w-[50%]
-      md:w-[50%]
-      lg:w-[31%]
-
-      px-2
-      sm:px-5
-      md:px-5
-      lg:px-10
-
-      pb-2
-      sm:pb-4
-      md:pb-6
-      lg:pb-20
-
-      self-end
-
-      flex
-      items-end
-      justify-center
-    "
-                >
-
-                  <div
-                    className="
-        flex flex-row
-        items-center
-
-        gap-[2px]
-        sm:gap-2
-
-        w-fit
-        max-w-full
-
-        flex-nowrap
-      "
-                  >
-
-                    {/* FIRST BUTTON */}
-                    <button
-                      className="
-          flex items-center justify-center
-
-          gap-[2px]
-          sm:gap-1
-
-          bg-[#0F172A]
-          text-white
-
-          font-opensans
-          font-semibold
-          uppercase
-          tracking-wide
-
-          rounded
-          shadow-lg
-
-          transition-all duration-300
-          hover:bg-black
-
-          whitespace-nowrap
-          flex-shrink-0
-
-          text-[4px]
-          sm:text-[8px]
-          md:text-[8px]
-          lg:text-[11px]
-
-          px-[3px]
-          sm:px-2
-          md:px-2
-          lg:px-3
-
-          py-[2px]
-          sm:py-[4px]
-          md:py-[4px]
-          lg:py-[6px]
-
-          min-h-[18px]
-          sm:min-h-[28px]
-          md:min-h-[28px]
-          lg:min-h-[36px]
-        "
-                    >
-
-                      <img
-                        src={email}
-                        alt="Email"
-                        className="
-            w-[7px]
-            h-auto
-
-            sm:w-[10px]
-            md:w-[10px]
-            lg:w-[16px]
-
-            bg-white
-            flex-shrink-0
+        {/* TAGLINE */}
+        <p
+          className="
+          -mt-5
+            font-patrick
+            text-[#1a1a2e]
+            text-[5px]
+            sm:text-[9px]
+            md:text-[12px]
+            lg:text-[17px]
+            xl:text-[21px]
+            hidden
+            md:block
           "
-                      />
+        >
+          Based on a{' '}
+          
+            REAL FAMILY&apos;S 50-STATE
+         
+          <br />
+          ADVENTURES
+          {' '}spanning generations!
+        </p>
 
-                      <span className="leading-none">
-                        Join the Early list
-                      </span>
-
-                    </button>
-
-                    {/* SECOND BUTTON */}
-                    <a
-                      href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
-                      className="
-          flex items-center justify-center
-
-          gap-[2px]
-          sm:gap-1
-
-          bg-white
-          text-[#0F172A]
-
-          border border-[#0F172A]
-          sm:border-2
-
-          font-opensans
-          font-bold
-          uppercase
-          tracking-wide
-
-          rounded
-          shadow-lg
-
-          transition-all duration-300
-          hover:bg-slate-100
-
-          whitespace-nowrap
-          flex-shrink-0
-
-          text-[4px]
-          sm:text-[8px]
-          md:text-[8px]
-          lg:text-[11px]
-
-          px-[3px]
-          sm:px-2
-          md:px-2
-          lg:px-3
-
-          py-[2px]
-          sm:py-[4px]
-          md:py-[4px]
-          lg:py-[6px]
-
-          min-h-[18px]
-          sm:min-h-[28px]
-          md:min-h-[28px]
-          lg:min-h-[36px]
-        "
-                    >
-
-                      <PlayIcon
-                        className="
-            w-[8px]
-            h-[8px]
-
-            sm:w-[14px]
-            sm:h-[14px]
-
-            md:w-[14px]
-            md:h-[14px]
-
-            lg:w-[20px]
-            lg:h-[20px]
-
-            bg-[#0D152F]
-            rounded-full
-
-            text-white
-
-            p-[1px]
-            sm:p-1
-
-            flex-shrink-0
+        {/* HEADLINE */}
+        <h1
+          className="
+            text-[#951A1D]
+            leading-none
+            font-story
+            text-[9px]
+            md:text-[24px]
+            lg:text-[28px]
           "
-                        fill="white"
-                      />
+        >
+          Now It&apos;s Your Turn.
+        </h1>
 
-                      <span className="leading-none">
-                        Watch the Story
-                      </span>
+    <div className=" md:ml-14 flex items-center justify-center gap-[2px] md:gap-5">
 
-                    </a>
+  {/* Left Line */}
+  <div className="w-[10px] sm:w-[14px] md:w-[18px] h-[1px] bg-[#1a1a2e]" />
 
-                  </div>
+  {/* Small Star */}
+  <FaStar className="text-[#1a1a2e] text-[5px] md:text-[7px]" />
 
-                </div>
+  {/* Big Middle Star */}
+  <FaStar className="text-[#1a1a2e] text-[8px] md:text-[11px]" />
 
-              </div>
+  {/* Small Star */}
+  <FaStar className="text-[#1a1a2e] text-[5px] md:text-[7px]" />
 
-
-            </div>
-
-            {/* RIGHT SIDE EMPTY SPACE */}
-            <div className="flex-1" />
-
-          </div>
-
-
+  {/* Right Line */}
+  <div className="w-[10px] sm:w-[14px] md:w-[18px] h-[1px] bg-[#1a1a2e]" />
 
         </div>
-      </section>
+
+        {/* SUB TEXT */}
+        <p
+          className="
+            font-roboto
+            text-[#1a1a2e]
+            leading-snug
+
+            text-[6px]
+            sm:text-[10px]
+            md:text-[14px]
+            lg:text-[20px]
+            xl:text-[26px]
+          "
+        >
+          Celebrating all 50 States
+          <br />
+          one month at a time.
+        </p>
+
+        {/* LAUNCH BADGE */}
+        <div
+            style={{
+    backgroundImage: `url(${backgroundhero})`,
+    backgroundSize: 'contain',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+          className="
+            text-white
+            rounded
+
+            px-2 sm:px-3 lg:px-5
+            py-1 sm:py-2 lg:py-3
+
+            text-center
+          "
+        >
+          <div
+            className="
+              font-opensans font-bold uppercase
+
+              text-[4px]
+              sm:text-[7px]
+              md:text-[10px]
+              lg:text-[14px]
+              xl:text-[18px]
+            "
+          >
+            Launching July 2026
+          </div>
+
+          <div
+            className="
+              opacity-90
+
+              text-[3px]
+              sm:text-[5px]
+              md:text-[7px]
+              lg:text-[10px]
+              xl:text-[13px]
+            "
+          >
+            During America&apos;s 250th Birthday Celebration
+          </div>
+        </div>
+         
+         {/* BOTTOM: CTA buttons */}
+      <div
+        className="
+          py-3
+          flex  items-center
+          gap-1 md:gap-3
+        "
+      >
+        {/* JOIN BUTTON */}
+        <button
+          className="
+            bg-[#1a1a2e]
+            text-white
+            border-0
+            rounded-[5px]
+
+            px-3 sm:px-4
+            py-1 md:py-2
+
+            font-bold
+            uppercase
+            tracking-[0.04em]
+
+            text-[8px]
+            md:text-[12px]
+            lg:text-[14px]
+
+            flex items-center gap-1.5
+            cursor-pointer
+            transition-all duration-300
+            hover:opacity-90
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              md:text-[14px]
+            "
+          >
+            ✉
+          </span>
+
+          Join the Early List
+        </button>
+
+        {/* WATCH BUTTON */}
+        <button
+          className="
+            bg-white
+            text-[#1a1a2e]
+
+            border-2 border-[#1a1a2e]
+            rounded-[5px]
+
+            px-3 sm:px-4
+            md:py-[7px]
+            py-[2px]
+            font-bold
+            uppercase
+            tracking-[0.04em]
+
+            text-[8px]
+            md:text-[12px]
+            lg:text-[14px]
+
+            flex items-center gap-1.5
+            cursor-pointer
+            transition-all duration-300
+            hover:bg-[#1a1a2e]
+            hover:text-white
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              md:text-[14px]
+            "
+          >
+            ▶
+          </span>
+
+          Watch the Story
+        </button>
+      </div>
+
+      {/* FOOTER TEXT */}
+      <div
+        className="
+          px-1
+          pb-3 sm:pb-4
+          hidden
+          md:block
+          ml-12
+          text-center
+          text-[#444]
+          leading-relaxed
+          font-semibold
+          text-[6px]
+          sm:text-[8px]
+          md:text-[10px]
+          lg:text-[12px]
+          xl:text-[14px]
+        "
+      >
+        No payment now. No commitment.
+        <br />
+
+        Be among the{" "}
+        <span className="text-[#951A1D]">FIRST FOUNDING FAMILIES</span>
+        <br />
+
+        to help this{" "}
+        <span className="text-[#951A1D]">DREAM COME TRUE!</span>
+      </div> 
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+
 
   
       {/* second section */}
