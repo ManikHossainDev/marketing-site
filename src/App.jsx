@@ -579,7 +579,7 @@ export default function App() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-20 lg:gap-10 items-stretch">
 
             {features.map((item) => (
 
@@ -658,322 +658,221 @@ export default function App() {
 
         </div>
         {/* --- THREE COLUMNS CONTAINER --- */}
-        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-5 lg:gap-10">
+        {/* // ✅ FINAL RESPONSIVE BEHAVIOR:
+        // 📱 Mobile  (< 768px)    → 1 column | Image TOP,  Text BOTTOM, Button bottom-right
+        // 💻 Tablet  (768-1023px) → 1 column | Image TOP,  Text BOTTOM, Button bottom-right
+        // 💻 Laptop  (1024-1279px)→ 1 column | Image TOP,  Text BOTTOM, Button bottom-right
+        // 🖥️ Desktop (≥ 1280px)   → 3 columns | Image LEFT, Text RIGHT,  Button bottom-right */}
 
-          {/* ================= COLUMN 1 ================= */}
-          <div className="bg-white rounded-xl w-full  shadow-[0_3px_12px_rgba(0,0,0,0.06)] p-4 flex flex-col h-full border-b-4 border-transparent hover:border-[#0D152E] transition-colors duration-300">
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            <div className="flex flex-col flex-grow">
-              {/* Header */}
-              <div className="flex items-center justify-center text-center gap-5 my-2">
-                <div>
-                  <img src={tag1997} alt="1997 Journey" className='w-[80px] h-[70px]' />
-                </div>
-                <div className='flex flex-col items-center justify-between gap-2'>
-                  <h3 className="font-bebas pb-2 font-normal text-[32.82px] leading-[100%] tracking-normal text-center">
-                    THE FIRST JOURNEY
-                  </h3>
-                  {/* Divider */}
-                  <div className="relative w-full flex items-center justify-center mt-3">
-                    <div className="w-full border-t border-[#e2938f]"></div>
+  {/* ================= COLUMN 1: THE FIRST JOURNEY ================= */}
+  <div className="bg-white rounded-xl shadow-[0_3px_12px_rgba(0,0,0,0.06)] p-4 flex flex-col border-b-4 border-transparent hover:border-[#0D152E] transition-colors duration-300">
 
-                    <div className="absolute bg-white px-2 flex gap-1 text-[9px] text-[#a81c14]">
-                      <span className="scale-75 text-[#0D152F]">★</span>
-                      <span className="text-xs -mt-0.5 font-bold">★</span>
-                      <span className="scale-75 text-[#0D152F]">★</span>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-
-
-              {/* Content */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 items-start flex-grow">
-
-                {/* Image */}
-                <div className=" p-1 bg-white shadow-sm w-full h-[328px]">
-                  <img
-                    src={tag1976}
-                    alt="1976 Journey"
-                    className="w-full h-full object-cover "
-                  />
-                </div>
-
-                {/* Text */}
-                <div className="text-[12.39px] md:text-[16px] lg:text-[18px] font-normal text-gray-900 font-roboto  space-y-1.5">
-
-                  <p>
-                    During America's Bicentennial, Marlene Smith-Graham, then a teenager, and her family worked their way through all 50 states.
-                  </p>
-
-                  <p className="">
-                    It was a celebratory idea dreamed up by her Colombian-born mother, who wanted her children to appreciate the opportunities and freedoms America had given their family.
-                    Their journey earned them the nickname: <br />
-                    <span className="text-[#a81c14] font-bold">
-                      {" "}“The Bicentennial Family.”
-                    </span>
-
-                  </p>
-
-
-                  
-                </div>
-              </div>
-
-            </div>
-
-                <div className="mt-3 flex justify-end">
-                    <a
-                      href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
-                      target="_blank"
-                      className="relative overflow-hidden bg-[#a81c14] text-white text-[11px] font-bold px-3 py-1 md:px-5 md:py-2 rounded shadow-sm group"
-                    >
-                      {/* Hover Overlay */}
-                      <span className="absolute inset-0 bg-[#0D152F] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
-
-                      {/* Button Text */}
-                      <span className="relative z-10">
-                        Read More
-                      </span>
-                    </a>
-                  </div>
+    {/* ---- HEADER ---- */}
+    <div className="flex items-center gap-4 mb-3">
+      <img
+        src={tag1997}
+        alt="1976"
+        className="w-[72px] h-[65px] object-contain flex-shrink-0"
+      />
+      <div className="flex-1 min-w-0">
+        <h3 className="font-bebas font-normal text-[26px] md:text-[30px] xl:text-[24px] 2xl:text-[28px] leading-tight tracking-normal uppercase text-[#0D152E]">
+          THE FIRST JOURNEY
+        </h3>
+        <div className="relative flex items-center mt-1.5">
+          <div className="flex-grow border-t border-[#e2938f]"></div>
+          <div className="flex gap-1 px-2">
+            <span className="text-[8px] text-[#0D152F]">★</span>
+            <span className="text-[11px] -mt-0.5 font-bold text-[#a81c14]">★</span>
+            <span className="text-[8px] text-[#0D152F]">★</span>
           </div>
-
-          {/* ================= COLUMN 2 ================= */}
-          <div className="bg-white w-full rounded-xl  p-3 md:p-5 flex flex-col h-full shadow-sm border-b-4 border-transparent hover:border-[#b32017] transition-colors duration-300">
-
-            {/* KEEPING SECOND CARD UNCHANGED */}
-
-            {/* TOP HEADER */}
-            <div className="flex items-start justify-center gap-5 mb-3">
-
-              {/* Ribbon */}
-              <div className="relative flex items-center justify-center w-[100px] h-[70px]">
-
-                {/* Background Shape */}
-
-                <div className=" p-1 bg-white shadow-sm h-full">
-                  <img
-                    src={tag1996tag}
-                    alt="1996-1997 Journey"
-                    className="w-[98px] h-[57px] object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Title */}
-              <div className="pt-1">
-                <h3 className="text-[19.84px]  font-bebas  uppercase text-[#b32017] leading-[100%] font-normal tracking-normal text-left">
-                  America's First
-                  <br />
-                  <span className="text-[19.84px]font-bebas pb-2 font-normal text-[32.82px] leading-[100%] tracking-normal font-bebas"> Internet Reality Family</span>
-                </h3>
-
-                {/* Underline */}
-
-                <div className="relative w-full flex items-center justify-center my-2">
-                  <div className="w-full border-t border-[#e2938f]"></div>
-
-                  <div className="absolute bg-white px-2 flex gap-1 text-[9px] text-[#a81c14]">
-                    <span className="scale-75 text-[#0D152F]">★</span>
-                    <span className="text-xs -mt-0.5 font-bold">★</span>
-                    <span className="scale-75 text-[#0D152F]">★</span>
-                  </div>
-                </div>
-
-
-
-              </div>
-            </div>
-
-            {/* IMAGE + RIGHT TEXT */}
-            <div className="md:flex gap-3 items-start">
-
-              {/* IMAGE SECTION */}
-              <div className="w-full md:w-[48%] shrink-0 bg-white p-1 shadow-sm">
-
-                <img
-                  src={tag1996}
-                  alt="Van Journey"
-                  className="w-full h-full object-cover border border-gray-300"
-                />
-
-                {/* Tiny Links */}
-
-              </div>
-
-              {/* RIGHT TEXT */}
-              <div className="w-full md:w-[52%] text-[12.39px] md:text-[16px] lg:text-[16px] font-normal  text-black font-roboto space-y-2">
-
-                <p>
-                  Before social media and reality TV
-                  when pay phones, dial-up internet,
-                  and no GPS were the norm —
-                  Marlene set out again to visit all 50 states,
-                  this time with HER family.
-                  A longtime journalist, she shared daily reports
-                  typed on a borrowed computer and uploaded
-                  without photos by an early internet provider.
-                  Families and teachers across America,
-                  discovering this new thing called the internet, <br />
-
-                </p>
-
-
-              </div>
-            </div>
-
-            {/* BOTTOM TEXT */}
-            <div className="mt-1 ps-2 text-[12.39px] md:text-[14px] font-normal text-black font-robooto  flex-grow">
-
-
-
-              <p>
-                soon began following their journey online;
-                and communities welcomed them into homes,
-                schools, and local traditions.
-                Media outlets in the U.S. and abroad began
-                calling them
-                <span className="text-[#b32017] font-bold">
-                  {" "}“America's Family,”
-                </span>
-                — a “Reality family” before reality TV existed
-                as we now know it.
-              </p>
-
-              <p>
-                They later appeared on national television,
-                and the journey became the book
-
-                HEADFIRST INTO AMERICA.
-
-              </p>
-            </div>
-
-            {/* BUTTON */}
-            <div className=" flex justify-end">
-              <a
-                href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
-                target="_blank"
-                className="relative overflow-hidden bg-[#a81c14] text-white text-[11px] font-bold px-3 py-1 md:px-5 md:py-2 rounded shadow-sm group"
-              >
-                {/* Hover Overlay */}
-                <span className="absolute inset-0 bg-[#0D152F] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
-
-                {/* Button Text */}
-                <span className="relative z-10">
-                  Read More
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* ================= COLUMN 3 ================= */}
-          <div className="bg-white w-full rounded-xl shadow-[0_3px_12px_rgba(0,0,0,0.06)] p-4 flex flex-col h-full border-b-4 border-transparent hover:border-[#3b5e32] transition-colors duration-300">
-
-            <div className="flex flex-col flex-grow">
-
-              {/* Header */}
-              <div className="flex items-center justify-center gap-3 my-2">
-
-
-                <div className="flex items-start gap-3 mb-3">
-
-                  {/* Ribbon */}
-
-                  <div className=" bg-white shadow-sm h-full">
-                    <img
-                      src={tag1998tag}
-                      alt="1998 Volunteerism"
-                      className="w-[80px] h-[72px] object-cover "
-                    />
-
-                  </div>
-
-                  {/* Title */}
-                  <div className="pt-1">
-                    <h3 className="text-[31.47px]  uppercase text-[#3b5e32] font-normal font-bebas leading-[100%] tracking-normal text-left">
-                      THE VOLUNTEERISM JOURNEY
-
-                    </h3>
-
-                    {/* Underline */}
-                    <div className="relative w-full flex items-center justify-center mt-4">
-                      <div className="w-full border-t border-[#e2938f]"></div>
-
-                      <div className="absolute bg-white px-2 flex gap-1 text-[9px] text-[#a81c14]">
-                        <span className="scale-75 text-[#0D152F]">★</span>
-                        <span className="text-xs -mt-0.5 font-bold">★</span>
-                        <span className="scale-75 text-[#0D152F]">★</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-              </div>
-
-
-
-              {/* Content */}
-              <div className="md:flex md:flex-row gap-2 mt-3 items-start flex-grow">
-
-                {/* Sidebar */}
-                <div className="w-full md:w-[50%] flex flex-row  p-0.5 bg-white shadow-sm shrink-0 items-stretch">
-
-
-
-                  <div className=" flex flex-col justify-between bg-white pl-0.5 w-full h-[310px]">
-
-                    <img
-                      src={tag1998}
-                      alt="1998 Volunteerism"
-                      className="w-full h-full object-cover"
-                    />
-
-
-                  </div>
-                </div>
-
-                {/* Text */}
-                <div className="text-[12.39px] md:text-[16px] lg:text-[17px] font-normal text-gray-900 font-roboto  space-y-1.5">
-
-                  <p>
-                    Inspired by the people who followed their travels online and the thousands of emails they received, the Graham family set out again—this time focused on volunteerism and giving back across America.
-                  </p>
-
-                  <p>
-                    The journey became about more than seeing the country.
-                  </p>
-
-                  <p>
-                    It became about experiencing communities, celebrating kindness, encouraging volunteerism and reconnecting people.
-                  </p>
-                  
-                </div>
-              </div>
-                <div className="mt-3 flex justify-end">
-                      <a
-                        href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
-                        target="_blank"
-                        className="relative overflow-hidden bg-[#a81c14] text-white text-[11px] font-bold px-3 py-1 md:px-5 md:py-2 rounded shadow-sm group"
-                      >
-                        {/* Hover Overlay */}
-                        <span className="absolute inset-0 bg-[#0D152F] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
-
-                        {/* Button Text */}
-                        <span className="relative z-10">
-                          Read More
-                        </span>
-                      </a>
-                    </div>
-            </div>
-
-            {/* Footer */}
-          </div>
+          <div className="flex-grow border-t border-[#e2938f]"></div>
         </div>
+      </div>
+    </div>
+
+    {/* ---- BODY: Image TOP on mobile/tablet/laptop | Image LEFT on desktop ---- */}
+    <div className="flex flex-col 2xl:flex-row gap-3 flex-grow">
+
+      {/* Image */}
+      <div className="w-full 2xl:w-[60%] flex-shrink-0 ">
+        <img
+          src={tag1976}
+          alt="1976 Journey"
+          className="w-full h-[230px] md:h-[290px] 2xl:h-[88%] object-fill"
+        />
+      </div>
+
+      {/* Text  */}
+      <div className="flex flex-col flex-grow justify-between">
+        <div className="text-[14px] md:text-[15px] xl:text-[16px] 2xl:text-[13px] font-normal text-gray-900 font-roboto space-y-2">
+          <p>
+            During America's Bicentennial, Marlene Smith-Graham, then a teenager, and her family worked their way through all 50 states.
+          </p>
+          <p>
+            It was a celebratory idea dreamed up by her Colombian-born mother, who wanted her children to appreciate the opportunities and freedoms America had given their family. Their journey earned them the nickname:{" "}
+            <span className="text-[#a81c14] font-bold">"The Bicentennial Family."</span>
+          </p>
+        </div>
+
+       
+      </div>
+    </div>
+     {/* Button - always bottom right */}
+        <div className="mt-4 flex justify-end">
+          <a
+            href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="relative overflow-hidden bg-[#a81c14] text-white text-[12px] font-bold px-5 py-2 rounded shadow-sm group"
+          >
+            <span className="absolute inset-0 bg-[#0D152F] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+            <span className="relative z-10">Read More</span>
+          </a>
+        </div>
+  </div>
+
+  {/* ================= COLUMN 2: INTERNET REALITY FAMILY ================= */}
+  <div className="bg-white rounded-xl shadow-[0_3px_12px_rgba(0,0,0,0.06)] p-4 flex flex-col border-b-4 border-transparent hover:border-[#b32017] transition-colors duration-300">
+
+    {/* ---- HEADER ---- */}
+    <div className="flex items-center gap-4 mb-3">
+      <div className="bg-white shadow-sm flex-shrink-0">
+        <img
+          src={tag1996tag}
+          alt="1996-1997"
+          className="w-[80px] h-[65px] object-cover"
+        />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h3 className="font-bebas font-normal leading-tight tracking-normal uppercase text-[#b32017]">
+          <span className="text-[16px] md:text-[18px] xl:text-[14px] 2xl:text-[16px]">America's First</span>
+          <br />
+          <span className="text-[24px] md:text-[28px] xl:text-[20px] 2xl:text-[24px]">Internet Reality Family</span>
+        </h3>
+        <div className="relative flex items-center mt-1.5">
+          <div className="flex-grow border-t border-[#e2938f]"></div>
+          <div className="flex gap-1 px-2">
+            <span className="text-[8px] text-[#0D152F]">★</span>
+            <span className="text-[11px] -mt-0.5 font-bold text-[#a81c14]">★</span>
+            <span className="text-[8px] text-[#0D152F]">★</span>
+          </div>
+          <div className="flex-grow border-t border-[#e2938f]"></div>
+        </div>
+      </div>
+    </div>
+
+    {/* ---- BODY: Image TOP on mobile/tablet/laptop | Image LEFT on desktop ---- */}
+    <div className="flex flex-col 2xl:flex-row gap-3 flex-grow">
+
+  {/* Image */}
+  <div className="w-full 2xl:w-[45%] flex-shrink-0  self-stretch">
+    <img
+      src={tag1996}
+      alt="Van Journey 1996"
+      className="w-full h-[230px] md:h-[290px] 2xl:h-[93%] object-fill"
+    />
+  </div>
+
+  {/* Text  */}
+  <div className="flex flex-col flex-grow justify-between">
+    <div className="text-[14px] md:text-[15px] xl:text-[13px] 2xl:text-[13px] font-normal text-black font-roboto space-y-2">
+      <p>
+        Before social media and reality TV — when pay phones, dial-up internet, and no GPS were the norm — Marlene set out again to visit all 50 states, this time with HER family. A longtime journalist, she shared daily reports typed on a borrowed computer and uploaded without photos by an early internet provider. Families and teachers across America, discovering this new thing called the internet,
+      </p>
+    </div>
+  </div>
+</div>
+  <p className="md:hidden xl:block  text-[14px] md:text-[15px] xl:text-[13px]">
+            soon began following their journey online; and communities welcomed them into homes, schools, and local traditions. Media outlets in the U.S. and abroad began calling them{" "}
+            <span className="text-[#b32017] font-bold">"America's Family,"</span>{" "}
+            — a "Reality family" before reality TV existed as we now know it. They later appeared on national television, and the journey became the book HEADFIRST INTO AMERICA.
+          </p>
+   {/* Button - always bottom right */}
+    <div className="mt-4 flex justify-end">
+      <a
+        href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
+        target="_blank"
+        rel="noreferrer"
+        className="relative overflow-hidden bg-[#a81c14] text-white text-[12px] font-bold px-5 py-2 rounded shadow-sm group"
+      >
+        <span className="absolute inset-0 bg-[#0D152F] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+        <span className="relative z-10">Read More</span>
+      </a>
+    </div>
+  </div>
+
+  {/* ================= COLUMN 3: VOLUNTEERISM JOURNEY ================= */}
+  <div className="bg-white rounded-xl shadow-[0_3px_12px_rgba(0,0,0,0.06)] p-4 flex flex-col border-b-4 border-transparent hover:border-[#3b5e32] transition-colors duration-300">
+
+    {/* ---- HEADER ---- */}
+    <div className="flex items-center gap-4 mb-3">
+      <div className="bg-white shadow-sm flex-shrink-0">
+        <img
+          src={tag1998tag}
+          alt="1998"
+          className="w-[72px] h-[72px] object-cover"
+        />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h3 className="font-bebas font-normal text-[24px] md:text-[28px] xl:text-[20px] 2xl:text-[24px] leading-tight tracking-normal uppercase text-[#3b5e32]">
+          THE VOLUNTEERISM JOURNEY
+        </h3>
+        <div className="relative flex items-center mt-1.5">
+          <div className="flex-grow border-t border-[#e2938f]"></div>
+          <div className="flex gap-1 px-2">
+            <span className="text-[8px] text-[#0D152F]">★</span>
+            <span className="text-[11px] -mt-0.5 font-bold text-[#a81c14]">★</span>
+            <span className="text-[8px] text-[#0D152F]">★</span>
+          </div>
+          <div className="flex-grow border-t border-[#e2938f]"></div>
+        </div>
+      </div>
+    </div>
+
+    {/* ---- BODY: Image TOP on mobile/tablet/laptop | Image LEFT on desktop ---- */}
+    <div className="flex flex-col 2xl:flex-row gap-3 flex-grow">
+
+      {/* Image */}
+      <div className="w-full 2xl:w-[60%] flex-shrink-0 ">
+        <img
+          src={tag1998}
+          alt="1998 Volunteerism"
+          className="w-full h-[230px] md:h-[290px] 2xl:h-[98%] object-fill"
+        />
+      </div>
+
+      {/* Text*/}
+      <div className="flex flex-col flex-grow justify-between">
+        <div className="text-[14px] md:text-[15px] xl:text-[13px] 2xl:text-[13px] font-normal text-gray-900 font-roboto space-y-2">
+          <p>
+            Inspired by the people who followed their travels online and the thousands of emails they received, the Graham family set out again—this time focused on volunteerism and giving back across America.
+          </p>
+          <p>The journey became about more than seeing the country.</p>
+          <p>
+            It became about experiencing communities, celebrating kindness, encouraging volunteerism and reconnecting people.
+          </p>
+        </div>
+
+        
+      </div>
+    </div>
+    {/* Button - always bottom right */}
+    <div className="mt-4 flex justify-end">
+          <a
+            href="https://web.archive.org/web/20001205114700/http://www.usatrip.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="relative overflow-hidden bg-[#a81c14] text-white text-[12px] font-bold px-5 py-2 rounded shadow-sm group"
+          >
+            <span className="absolute inset-0 bg-[#0D152F] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></span>
+            <span className="relative z-10">Read More</span>
+          </a>
+        </div>
+  </div>
+
+</div>
       </div>
 
 
@@ -1032,14 +931,14 @@ export default function App() {
             celebrate what still connects us as Americans.
           </p>
 
-          <p className="text-[11px] font-roboto sm:text-[16px] lg:text-[24px] lg:pr-10 text-gray-700  mb-3 lg:mb-7">
+          <p className="text-[11px] font-roboto sm:text-[16px] lg:text-[24px] w-[70%] md:w-[76%] text-gray-700  mb-3 lg:mb-7">
             Throughout the year and beyond, OUR50 plans to highlight the people, places,
             traditions, and stories that still bring us together.
           </p>
 
-          <p className="text-[11px] font-roboto sm:text-[16px] lg:text-[24px]  text-[#951A1D]  mb-3 lg:mb-7">
+          <p className="text-[11px] font-roboto sm:text-[16px] lg:text-[24px] w-[69%] md:w-[74%] text-[#951A1D]  mb-3 lg:mb-7">
             We're not just exploring America. We're celebrating what still connects us.
-            <br />
+           
             And reminding each other that we are more alike than different.
           </p>
         </div>
@@ -1214,7 +1113,7 @@ export default function App() {
                 </div>
 
                 {/* Description */}
-                <div className="space-y-5 text-black text-[15px] md:text-[18px] lg:text-[24px]  pe-7 font-normal">
+                <div className="space-y-5 text-black px-4 text-[15px] md:text-[18px] lg:text-[24px]  pe-7 font-normal">
 
                   <p className="font-roboto">
                     OUR50.com’s long-term vision is not only to help young people learn about America, but also to create modest Founders Parks across the country. Founding members and families will be honored on plaques, giving them a special place to visit for years to come – and today’s youngsters may one day bring their own children and grandchildren there.
@@ -1227,7 +1126,7 @@ export default function App() {
                 </div>
 
                 {/* Footer */}
-                <div className="mt-10 flex  items-center text-center justify-center gap-3 text-[#6f7b4b] font-semibold">
+                <div className="mt-10 flex px-4  items-center text-center justify-center gap-3 text-[#6f7b4b] font-semibold">
                   <img src={map} alt='map' className="w-[34px] h-[34px]" />
 
                   <p className="text-[15px] md:text-[18px] lg:text-[24px]">Our first park will be built somewhere in Florida.</p>
@@ -1769,7 +1668,7 @@ export default function App() {
 
 
 
-              <div className="flex items-center gap-8">
+              <div className="flex items-center gap-8 mb-4 md:mb-0">
 
                 {/* Facebook */}
                 <a
@@ -1808,7 +1707,7 @@ export default function App() {
             </div>
 
             {/* Navigation */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-center">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-center mb-4 md:mb-0">
               <a
                 href="/contact"
                 className="text-white text-[16px] font-roboto font-normal uppercase"
